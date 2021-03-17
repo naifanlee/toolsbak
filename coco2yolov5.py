@@ -11,30 +11,6 @@ from utils.common import *
 import pprint
 
 
-catenm2id = {
-    'car': 0,
-    'truck': 1,
-    'bus': 2,
-    'person': 3,
-    'cycle': 4,
-    'cone': 5,
-    'barrier': 6,
-    'traffic sign': 7,
-    'traffic light': 8
-}
-
-cateid2nm = {
-    0: 'car',
-    1: 'truck',
-    2: 'bus',
-    3: 'person',
-    4: 'cycle',
-    5: 'cone',
-    6: 'barrier',
-    7: 'traffic sign',
-    8: 'traffic light'
-}
-
 def convert(tasks=['detection']):
     for split in ['train2017', 'val2017']:
         anno_fpath = osp.join(args.src, 'annotations', 'instances_{}.json'.format(split))

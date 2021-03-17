@@ -8,6 +8,31 @@ import cv2
 import numpy as np
 
 from utils.common import *
+from utils.plots import *
+
+catenm2id = {
+    'car': 0,
+    'truck': 1,
+    'bus': 2,
+    'person': 3,
+    'cycle': 4,
+    'cone': 5,
+    'barrier': 6,
+    'traffic sign': 7,
+    'traffic light': 8
+}
+
+cateid2nm = {
+    0: 'car',
+    1: 'truck',
+    2: 'bus',
+    3: 'person',
+    4: 'cycle',
+    5: 'cone',
+    6: 'barrier',
+    7: 'traffic sign',
+    8: 'traffic light'
+}
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -22,7 +47,7 @@ if __name__ == '__main__':
     args.stream = int(args.stream)
     if args.save:
         save_path = 'savetemp'
-        checkpath(save_path)
+        check_path(save_path)
     if not args.noshow:
         cv2.namedWindow('show', cv2.WINDOW_NORMAL)
     print(args)
